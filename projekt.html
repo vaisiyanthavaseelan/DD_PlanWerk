@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projekt — D&D PlanWerk GmbH</title>
+<meta name="description" content="Projektreferenz der D&D PlanWerk GmbH — Planung, Gestaltung &amp; Handwerk aus einer Hand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.p02-mobile-car{display:none}
+@media(max-width:760px){
+  .p02-mobile-car{display:flex;grid-column:span 3}
+  .p02-vorher-single{display:none !important}
+  .gitem.p02-nachher{grid-column:span 3 !important}
+  .p02-mobile-car .gitem__pic{aspect-ratio:4/5 !important}
+  .gitem.p02-nachher .gitem__pic{aspect-ratio:4/5 !important}
+  .p01-row3 .gitem__pic{aspect-ratio:3/5 !important}
+}
+</style>
+</head>
+<body data-hero="light">
+
+<!-- ============================== NAV ============================== -->
+<nav class="nav scrolled" id="nav">
+  <a href="index.html" class="nav__logo" aria-label="D&D PlanWerk Startseite"><img src="assets/dd-planwerk-logo.png" alt="D&D PlanWerk"></a>
+  <div class="nav__links" id="navlinks">
+    <a class="lnk" href="index.html#ueber">Über uns</a>
+    <a class="lnk" href="index.html#leistungen">Leistungen</a>
+    <a class="lnk" href="index.html#projekte">Projekte</a>
+    <a class="lnk" href="index.html#philosophie">Philosophie</a>
+    <a class="lnk" href="index.html#kontakt">Kontakt</a>
+    <a class="btn btn--gold nav__cta" href="index.html#kontakt">Jetzt anfragen</a>
+  </div>
+  <button class="nav__burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav__backdrop" id="navBackdrop"></div>
+</nav>
+
+<!-- ============================== DETAIL ============================== -->
+<main>
+  <div class="pd-top">
+    <a class="pd-back" href="index.html#projekte"><span>←</span> Alle Projekte</a>
+    <div class="pd-head">
+      <div>
+        <span class="eyebrow" id="pd-cat">Referenz</span>
+        <h1 id="pd-title">Projekt</h1>
+        <p class="lead" id="pd-intro"></p>
+      </div>
+      <div class="pd-meta">
+        <div><small>Leistung</small><b id="pd-scope">—</b></div>
+        <div><small>Ort</small><b id="pd-loc">—</b></div>
+        <div><small>Jahr</small><b id="pd-year">—</b></div>
+        <div><small>Status</small><b>Abgeschlossen</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery" id="gallery">
+    <div class="ph g-full" data-label="Hauptbild · Querformat (≥ 1600×800)"></div>
+    <div class="ph g-half" data-label="Detail / Vorher"></div>
+    <div class="ph g-half" data-label="Detail / Nachher"></div>
+    <div class="ph g-third" data-label="Detail 1"></div>
+    <div class="ph g-third" data-label="Detail 2"></div>
+    <div class="ph g-third" data-label="Detail 3"></div>
+  </div>
+
+  <div class="pd-next">
+    <div class="pd-cta">
+      <h2>Ein ähnliches Projekt geplant?</h2>
+      <p>Erzählen Sie uns von Ihrem Vorhaben — wir beraten Sie unverbindlich und begleiten Sie von der Planung bis zur Übergabe.</p>
+      <a class="btn btn--gold" href="index.html#kontakt">Kontakt aufnehmen <span class="arr">→</span></a>
+    </div>
+  </div>
+</main>
+
+<!-- ============================== LIGHTBOX ============================== -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Bildansicht">
+  <figure class="lb__stage">
+    <img class="lb__img" id="lb-img" alt="">
+    <span class="lb__badge" id="lb-badge" style="display:none"></span>
+    <div class="lb__cap" id="lb-cap"></div>
+  </figure>
+  <button class="lb__close" id="lb-close" aria-label="Schließen">×</button>
+</div>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="foot">
+  <div class="foot__top">
+    <div>
+      <span class="foot__eyebrow">D&amp;D PlanWerk GmbH</span>
+      <p class="foot__tag">Planung, Gestaltung &amp; Handwerk aus einer Hand — für Berlin &amp; Brandenburg.</p>
+    </div>
+    <div class="foot__cols">
+      <div class="foot__col">
+        <h5>Navigation</h5>
+        <a href="index.html#ueber">Über uns</a><a href="index.html#leistungen">Leistungen</a><a href="index.html#projekte">Projekte</a><a href="index.html#kontakt">Kontakt</a>
+      </div>
+      <div class="foot__col">
+        <h5>Kontakt</h5>
+        <p>Gierkezeile 16, 10585 Berlin</p>
+        <a href="tel:+4915792306777">0157 / 92 30 6 777</a>
+        <a href="mailto:info@dd-planwerk.de">info@dd-planwerk.de</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot__bar">
+    <span>© 2026 D&amp;D PlanWerk GmbH</span>
+    <nav><a href="index.html">Zur Startseite</a><a href="#">Impressum</a><a href="#">Datenschutz</a></nav>
+  </div>
+</footer>
+
+<script>
+if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+(function(){
+  const nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  const isReload = nav ? nav.type === 'reload' : (performance.navigation && performance.navigation.type === 1);
+  if(isReload && location.hash){ history.replaceState(null, '', location.pathname + location.search); }
+  window.addEventListener('load', ()=>{ if(isReload || !location.hash) window.scrollTo(0,0); });
+})();
+
+const PROJECTS = {
+  "01":{
+    title:"Altbausanierung Charlottenburg",
+    cat:"Planung · Handwerk",
+    scope:"Sanierung & Innenausbau",
+    loc:"Berlin-Charlottenburg",
+    year:"2024",
+    intro:"Behutsame Sanierung einer Altbauwohnung — Grundriss geöffnet, Stuck erhalten, Technik auf heutigen Stand gebracht. Geplant und ausgeführt aus einer Hand.",
+    images:[
+      {src:"assets/projekte/01/01-wohnzimmer-nachher.jpeg", ratio:"16/10", size:"full",  phase:"nachher", cap:"Wohnen · Großzügiger Wohnbereich nach der Sanierung"},
+      {src:"assets/projekte/01/06-bad-rohinstallation.jpeg", ratio:"3/4", size:"half", phase:"vorher",  cap:"Bad · Rohinstallation mit neuer Vorwand"},
+      {src:"assets/projekte/01/04-bad-nachher.jpeg",         ratio:"3/4", size:"half", phase:"nachher", cap:"Bad · Walk-In mit indirekt beleuchteten Nischen"},
+      {src:"assets/projekte/01/08-entkernung.jpeg",          ratio:"3/4", size:"third", phase:"vorher",  cap:"Entkernung · Bestand vor Beginn"},
+      {
+        ratio:"3/4", size:"third",
+        carousel:[
+          {src:"assets/projekte/01/05-rohbau-wohnen.jpeg", phase:"prozess", cap:"Wohnen · Rohbau & Trockenbau"},
+          {src:"assets/projekte/01/07-planung-wand.jpeg",  phase:"prozess", cap:"Planung · Werkstattpläne vor Ort"}
+        ]
+      },
+      {src:"assets/projekte/01/09-wohnen-nachher.jpeg",     ratio:"3/4", size:"third", phase:"nachher", cap:"Wohnen · Eichenparkett & frische Wände"}
+    ]
+  },
+  "02":{
+    title:"Loft-Umbau Prenzlauer Berg",
+    cat:"Gestaltung · Innenausbau",
+    scope:"Innenarchitektur & Ausbau",
+    loc:"Berlin-Prenzlauer Berg",
+    year:"2023",
+    intro:"Aus einer ehemaligen Gewerbeeinheit wird ein offenes Loft mit klarer Materialsprache, indirekter Lichtführung und maßgefertigten Einbauten.",
+    images:[
+      {src:"assets/projekte/02/01-dachboden-vorher.jpeg", ratio:"3/4", size:"third", phase:"vorher",  cap:"Dachboden · Rohzustand mit Isover-Dämmung"},
+      {src:"assets/projekte/02/02-raum-vorher.jpeg",      ratio:"3/4", size:"third", phase:"vorher",  cap:"Raum · Bestand vor Entkernung"},
+      {src:"assets/projekte/02/03-loft-prozess.jpeg",     ratio:"3/4", size:"third", phase:"nachher", cap:"Loft · Glasdach-Halle nach dem Umbau"},
+      {
+        ratio:"3/4", size:"half",
+        carousel:[
+          {src:"assets/projekte/02/04-bad-vorher-wanne.jpeg",      phase:"vorher", cap:"Bad · Wanne & Dusche vor dem Umbau"},
+          {src:"assets/projekte/02/06-bad-vorher-waschbecken.jpeg", phase:"vorher", cap:"Bad · Waschbereich vor dem Umbau"}
+        ]
+      },
+      {
+        ratio:"3/4", size:"half",
+        carousel:[
+          {src:"assets/projekte/02/05-bad-prozess-a.jpeg", phase:"prozess", cap:"Bad · Entkernung Ansicht 1"},
+          {src:"assets/projekte/02/05-bad-prozess-b.jpeg", phase:"prozess", cap:"Bad · Entkernung Ansicht 2"},
+          {src:"assets/projekte/02/05-bad-prozess-c.jpeg", phase:"prozess", cap:"Bad · Entkernung Ansicht 3"}
+        ]
+      }
+    ]
+  },
+  "03":{
+    title:"Praxis Mitte",
+    cat:"Trockenbau · Licht",
+    scope:"Ausbau & Lichtplanung",
+    loc:"Berlin-Mitte",
+    year:"2024",
+    intro:"Funktionaler Praxisausbau mit ruhiger Atmosphäre — durchdachte Raumaufteilung, schallschützender Trockenbau und blendfreie Beleuchtung.",
+    images:[
+      {src:"assets/projekte/03/00-altbau-vorher.jpeg",     ratio:"3/4", size:"half", phase:"vorher",  cap:"Altbau · Entkernung mit Bauschutt und freigelegtem Mauerwerk"},
+      {src:"assets/projekte/03/01-altbau-prozess-a.jpeg",  ratio:"3/4", size:"half", phase:"nachher", cap:"Altbau · Verputzter Raum mit Stuckdecke und Flügeltür"},
+      {src:"assets/projekte/03/03-flur-vorher.jpeg",       ratio:"3/4", size:"half", phase:"vorher",  cap:"Flur · Rohzustand mit alten Dielen und abgeblättertem Putz"},
+      {src:"assets/projekte/03/04-flur-nachher.jpeg",      ratio:"3/4", size:"half", phase:"nachher", cap:"Flur · Frisch verputzt mit Eichenparkett und Einbauleuchten"},
+      {src:"assets/projekte/03/05-raum-nachher.jpg",       ratio:"3/4", size:"half", phase:"nachher", cap:"Raum · Fertiggestellt mit neuem Dielenboden"},
+      {src:"assets/projekte/03/06-wohnen-nachher.jpg",     ratio:"3/4", size:"half", phase:"nachher", cap:"Wohnen · Heller Wohnbereich mit Eichenparkett und neuen Fenstern"}
+    ]
+  },
+  "04":{title:"Wohnhaus Brandenburg", cat:"Neubau · Planung", scope:"Neubau & Projektsteuerung", loc:"Brandenburg", year:"2023", intro:"Energieeffizienter Neubau eines Einfamilienhauses — von der Entwurfs- und Genehmigungsplanung bis zur Koordination aller Gewerke."},
+  "05":{title:"Einbauküche Maßanfertigung", cat:"Möbeldesign", scope:"Möbeldesign & Fertigung", loc:"Berlin", year:"2025", intro:"Maßgefertigte Küche, exakt auf Raum und Nutzung zugeschnitten — vom Entwurf über die Materialauswahl bis zur sauberen Montage."},
+  "06":{title:"Büroumbau Kreuzberg", cat:"Innenarchitektur · Ausbau", scope:"Innenarchitektur & Ausbau", loc:"Berlin-Kreuzberg", year:"2024", intro:"Umbau einer Bürofläche zu einer offenen, kommunikativen Arbeitswelt mit Rückzugszonen, Akustikkonzept und individueller Möblierung."}
+};
+
+const params = new URLSearchParams(location.search);
+const id = (params.get('p') || '01').padStart(2,'0');
+const p = PROJECTS[id] || PROJECTS["01"];
+document.title = p.title + " — D&D PlanWerk GmbH";
+document.getElementById('pd-title').textContent = p.title;
+document.getElementById('pd-cat').textContent = p.cat;
+document.getElementById('pd-intro').textContent = p.intro;
+document.getElementById('pd-scope').textContent = p.scope;
+document.getElementById('pd-loc').textContent = p.loc;
+document.getElementById('pd-year').textContent = p.year;
+
+const gallery = document.getElementById('gallery');
+if(p.images && p.images.length){
+  gallery.innerHTML = '';
+  const PHASE_LABEL = {vorher:'Vorher', nachher:'Nachher', prozess:'Prozess'};
+  const flat = [];
+  p.images.forEach(item=>{
+    if(item.carousel){ item.carousel.forEach(sub => flat.push({...sub, ratio:item.ratio})); }
+    else { flat.push(item); }
+  });
+  flat.forEach(img=>{ const i = new Image(); i.src = img.src; });
+
+  p.images.forEach(item=>{
+    if(item.carousel){
+      const el = document.createElement('figure');
+      el.className = 'gitem gitem--car g-' + (item.size || 'third');
+      const stage = document.createElement('div');
+      stage.className = 'gitem__pic';
+      if(item.ratio) stage.style.aspectRatio = item.ratio.replace('/', ' / ');
+      const badge = document.createElement('span');
+      badge.className = 'gitem__badge';
+      const prev = document.createElement('button');
+      prev.type='button'; prev.className='car__nav car__nav--prev'; prev.setAttribute('aria-label','Vorheriges Bild'); prev.textContent='‹';
+      const next = document.createElement('button');
+      next.type='button'; next.className='car__nav car__nav--next'; next.setAttribute('aria-label','Nächstes Bild'); next.textContent='›';
+      const dots = document.createElement('div');
+      dots.className = 'car__dots';
+      item.carousel.forEach((_,di)=>{
+        const d = document.createElement('span'); d.className='car__dot'; if(di===0) d.classList.add('is-on'); dots.appendChild(d);
+      });
+      const cap = document.createElement('figcaption');
+      cap.className = 'gitem__cap';
+      stage.appendChild(badge); stage.appendChild(prev); stage.appendChild(next); stage.appendChild(dots);
+      el.appendChild(stage); el.appendChild(cap);
+      let ci = 0;
+      const imgA = document.createElement('div');
+      const imgB = document.createElement('div');
+      const layerStyle = 'position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .35s ease;';
+      imgA.style.cssText = layerStyle + 'opacity:1;z-index:1;';
+      imgB.style.cssText = layerStyle + 'opacity:0;z-index:2;';
+      stage.appendChild(imgA); stage.appendChild(imgB);
+      let activeLayer = 'A';
+      function render(){
+        const sub = item.carousel[ci];
+        if(activeLayer === 'A'){
+          imgB.style.backgroundImage = "url('" + sub.src + "')";
+          imgB.style.opacity = '1'; imgA.style.opacity = '0'; activeLayer = 'B';
+        } else {
+          imgA.style.backgroundImage = "url('" + sub.src + "')";
+          imgA.style.opacity = '1'; imgB.style.opacity = '0'; activeLayer = 'A';
+        }
+        if(sub.phase && PHASE_LABEL[sub.phase]){
+          badge.textContent = PHASE_LABEL[sub.phase];
+          badge.className = 'gitem__badge is-' + sub.phase;
+          badge.style.display = '';
+          el.className = 'gitem gitem--car g-' + (item.size || 'third') + ' is-' + sub.phase;
+        } else { badge.style.display='none'; }
+        cap.textContent = sub.cap || '';
+        dots.querySelectorAll('.car__dot').forEach((d,di)=> d.classList.toggle('is-on', di===ci));
+      }
+      imgA.style.backgroundImage = "url('" + item.carousel[0].src + "')";
+      {
+        const sub = item.carousel[0];
+        if(sub.phase && PHASE_LABEL[sub.phase]){
+          badge.textContent = PHASE_LABEL[sub.phase];
+          badge.className = 'gitem__badge is-' + sub.phase;
+          badge.style.display = '';
+          el.className = 'gitem gitem--car g-' + (item.size || 'third') + ' is-' + sub.phase;
+        }
+        cap.textContent = sub.cap || '';
+      }
+      function step(d, ev){
+        if(ev){ ev.stopPropagation(); }
+        ci = (ci + d + item.carousel.length) % item.carousel.length;
+        render();
+      }
+      prev.addEventListener('click', e=> step(-1, e));
+      next.addEventListener('click', e=> step(1, e));
+      gallery.appendChild(el);
+      return;
+    }
+    const el = document.createElement('figure');
+    el.className = 'gitem g-' + (item.size || 'third') + (item.phase ? ' is-' + item.phase : '');
+    const pic = document.createElement('div');
+    pic.className = 'gitem__pic';
+    pic.style.backgroundImage = "url('" + item.src + "')";
+    if(item.ratio) pic.style.aspectRatio = item.ratio.replace('/', ' / ');
+    if(item.pos) pic.style.backgroundPosition = item.pos;
+    el.appendChild(pic);
+    if(item.phase && PHASE_LABEL[item.phase]){
+      const b = document.createElement('span');
+      b.className = 'gitem__badge';
+      b.textContent = PHASE_LABEL[item.phase];
+      el.appendChild(b);
+    }
+    if(item.cap){
+      const c = document.createElement('figcaption');
+      c.className = 'gitem__cap';
+      c.textContent = item.cap;
+      el.appendChild(c);
+    }
+    gallery.appendChild(el);
+  });
+
+  if(id === '01'){
+    const gitems01 = Array.from(gallery.querySelectorAll('.gitem'));
+    [3,4,5].forEach(function(i){ if(gitems01[i]) gitems01[i].classList.add('p01-row3'); });
+  }
+
+  if(id === '02'){
+    const gitems = Array.from(gallery.querySelectorAll('.gitem'));
+    gitems[0].classList.add('p02-vorher-single');
+    gitems[1].classList.add('p02-vorher-single');
+    gitems[2].classList.add('p02-nachher');
+    const vorherData = [
+      {src:p.images[0].src, cap:p.images[0].cap},
+      {src:p.images[1].src, cap:p.images[1].cap}
+    ];
+    const mc = document.createElement('figure');
+    mc.className = 'gitem gitem--car p02-mobile-car is-vorher';
+    const mStage = document.createElement('div');
+    mStage.className = 'gitem__pic';
+    mStage.style.aspectRatio = '4 / 5';
+    const mBadge = document.createElement('span');
+    mBadge.className = 'gitem__badge is-vorher';
+    mBadge.textContent = 'Vorher';
+    const mPrev = document.createElement('button');
+    mPrev.type='button'; mPrev.className='car__nav car__nav--prev';
+    mPrev.setAttribute('aria-label','Vorheriges Bild'); mPrev.textContent='‹';
+    const mNext = document.createElement('button');
+    mNext.type='button'; mNext.className='car__nav car__nav--next';
+    mNext.setAttribute('aria-label','Nächstes Bild'); mNext.textContent='›';
+    const mDots = document.createElement('div'); mDots.className='car__dots';
+    vorherData.forEach((_,di)=>{
+      const d=document.createElement('span'); d.className='car__dot';
+      if(di===0) d.classList.add('is-on'); mDots.appendChild(d);
+    });
+    const mCap = document.createElement('figcaption');
+    mCap.className='gitem__cap';
+    mCap.textContent = vorherData[0].cap;
+    const mImgA = document.createElement('div');
+    const mImgB = document.createElement('div');
+    const ls='position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .35s ease;';
+    mImgA.style.cssText=ls+'opacity:1;z-index:1;';
+    mImgB.style.cssText=ls+'opacity:0;z-index:2;';
+    mImgA.style.backgroundImage="url('"+vorherData[0].src+"')";
+    mStage.append(mImgA, mImgB, mBadge, mPrev, mNext, mDots);
+    mc.append(mStage, mCap);
+    let mci=0, mAL='A';
+    function mRender(){
+      const sub=vorherData[mci];
+      if(mAL==='A'){
+        mImgB.style.backgroundImage="url('"+sub.src+"')";
+        mImgB.style.opacity='1'; mImgA.style.opacity='0'; mAL='B';
+      } else {
+        mImgA.style.backgroundImage="url('"+sub.src+"')";
+        mImgA.style.opacity='1'; mImgB.style.opacity='0'; mAL='A';
+      }
+      mCap.textContent=sub.cap||'';
+      mDots.querySelectorAll('.car__dot').forEach((d,di)=>d.classList.toggle('is-on',di===mci));
+    }
+    mPrev.addEventListener('click',e=>{e.stopPropagation();mci=(mci-1+vorherData.length)%vorherData.length;mRender();});
+    mNext.addEventListener('click',e=>{e.stopPropagation();mci=(mci+1)%vorherData.length;mRender();});
+    gallery.insertBefore(mc, gitems[0]);
+  }
+}
+
+(function(){
+  const lb     = document.getElementById('lb');
+  const lbImg  = document.getElementById('lb-img');
+  const lbBadge= document.getElementById('lb-badge');
+  const lbCap  = document.getElementById('lb-cap');
+  const lbClose= document.getElementById('lb-close');
+  const PHASE  = {vorher:'Vorher', nachher:'Nachher', prozess:'Prozess'};
+  function openLb(src, phase, cap){
+    lbImg.src = src;
+    if(phase && PHASE[phase]){
+      lbBadge.textContent = PHASE[phase];
+      lbBadge.className = 'lb__badge is-' + phase;
+      lbBadge.style.display = '';
+    } else { lbBadge.style.display = 'none'; }
+    lbCap.textContent = cap || '';
+    lb.classList.add('is-open');
+    document.body.classList.add('lb-open');
+  }
+  function closeLb(){
+    lb.classList.remove('is-open');
+    document.body.classList.remove('lb-open');
+    lbImg.src = '';
+  }
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', e=>{ if(e.target === lb) closeLb(); });
+  window.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeLb(); });
+  function wireGallery(){
+    if(!window.matchMedia('(max-width:760px)').matches) return;
+    document.querySelectorAll('.gitem__pic').forEach(pic=>{
+      pic.style.cursor = 'zoom-in';
+      pic.addEventListener('click', e=>{
+        if(e.target.closest('.car__nav')) return;
+        const layers = pic.querySelectorAll('div');
+        let src = '';
+        if(layers.length){
+          let visible = null;
+          layers.forEach(l=>{ if(l.style.backgroundImage && l.style.opacity !== '0') visible = l; });
+          if(visible) src = visible.style.backgroundImage.replace(/^url\(['"]?/,'').replace(/['"]?\)$/,'');
+        }
+        if(!src) src = pic.style.backgroundImage.replace(/^url\(['"]?/,'').replace(/['"]?\)$/,'');
+        if(!src) return;
+        const gitem = pic.closest('.gitem');
+        const phaseMatch = gitem && gitem.className.match(/is-(vorher|nachher|prozess)/);
+        const phase = phaseMatch ? phaseMatch[1] : '';
+        const capEl = gitem && gitem.querySelector('.gitem__cap');
+        openLb(src, phase, capEl ? capEl.textContent : '');
+      });
+    });
+  }
+  setTimeout(wireGallery, 200);
+})();
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', ()=> nav.classList.toggle('scrolled', true), {passive:true});
+const burger = document.getElementById('burger');
+const backdrop = document.getElementById('navBackdrop');
+function setMenu(open){
+  nav.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+burger.addEventListener('click', ()=> setMenu(!nav.classList.contains('open')));
+backdrop.addEventListener('click', ()=> setMenu(false));
+document.querySelectorAll('#navlinks a').forEach(a=> a.addEventListener('click', ()=> setMenu(false)));
+window.addEventListener('keydown', e=>{ if(e.key === 'Escape') setMenu(false); });
+</script>
+</body>
+</html>
