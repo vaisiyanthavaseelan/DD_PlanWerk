@@ -648,6 +648,7 @@ body.lb-open{overflow:hidden}
   .cta-band__inner{flex-direction:column;align-items:flex-start}
   .cta-band__btns{width:100%}
   .cta-band__btns .cta-band__primary,.cta-band__btns .cta-band__ghost{flex:1;justify-content:center}
+  .cta-band__btns .cta-band__ghost{font-size:.82rem;letter-spacing:.01em;white-space:nowrap}
 }
 
 /* ============================================================ PHIL 5-COL */
